@@ -1,0 +1,23 @@
+type Query {
+    accountsList : [BankAccount],
+    accountById (id:String) : BankAccount
+
+}
+type Mutation {
+    addAccount(bankAccount : BankAccountDTO) : BankAccount,
+    updateAccount(id : String, bankAccount : BankAccountDTO) : BankAccount
+   # deleteAccount (id : String):
+}
+type BankAccount {
+    id : String,
+    createdAt: String , # You can represent Date as a String in GraphQL
+    balance: Float  ,   # Double maps to Float in GraphQL
+    currency: String,
+    type: String
+}
+
+input BankAccountDTO{
+    balance: Float  ,   # Double maps to Float in GraphQL
+    currency: String,
+    type: String
+}
